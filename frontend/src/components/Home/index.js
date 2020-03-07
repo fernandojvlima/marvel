@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from 'react';
+import { ts, publicKey, hash, baseURL } from '../../Api';
 import axios from 'axios';
+import Personagem from '../Personagem';
 
 const Home = () => {
-  //Timestamp
-  const ts = 1583521943;
-  //Public Key
-  const publicKey = "135eca1ab762d898b67d632b4ae29615";
-
-  //Hash MD5 com a combinação (ts+publicKey+privateKey)
-  const hash = "9766cd51a5641bb629b26b137b1d744c";
-  //URL base para as requisições a API da Marvel
-  const baseURL = "https://gateway.marvel.com:443/v1/public/"
-
   const [data, setData] = useState([]);
+  const [characters, setCharacters] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  //Requisição para o servidor Marvel solicitando personagens, passando as chaves da API.
   useEffect(() => {
     axios
       .get(`${baseURL}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
       .then(res => {
-        setData(res.data)
+        setData(data)
+        setCharacters(res.data.data.results)
+        setLoading(false)
       })
   }, [])
 
-
   return (
-    <div>
-      <h3>Home</h3>
+    <div className="container">
+      <h1>Marvel</h1>
+      {loading && <span className="loading">Loading...</span>}
+      {characters
+        .map((item, index) =>
+          <Personagem item={item} index={index} />
+        )
+      }
     </div>
   )
 }
