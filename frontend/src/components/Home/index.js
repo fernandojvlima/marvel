@@ -20,14 +20,16 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="container">
-      <h1>Marvel</h1>
-      {loading && <span className="loading">Loading...</span>}
-      {characters
-        .map((item, index) =>
-          <Personagem item={item} index={index} />
-        )
-      }
+    <div>
+      <h1 className="barra">Marvel</h1>
+      <div className="container">
+        {loading && <span className="loading">Loading...</span>}
+        {characters
+          .map((item, index) =>
+            <Personagem item={item} index={index} />
+          )
+        }
+      </div>
     </div>
   )
 }

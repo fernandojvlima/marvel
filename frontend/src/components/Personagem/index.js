@@ -7,13 +7,15 @@ const Personagem = (props) => {
   const index = props.index;
 
   return (
-    <Card>
-      <CardImg top width="100%" src={item.thumbnail.path + imageExtension} alt={item.name} />
-      <CardBody key={index}>
-        <CardTitle>{item.name}</CardTitle>
-        <Button>Detalhes</Button>
-      </CardBody>
-    </Card>
+    <div className="teste">
+      <Card className="card-corpo">
+        <CardImg top src={item.thumbnail.path + imageExtension} alt={item.name} className="card-image" />
+        <CardBody key={index} >
+          <CardTitle>{item.name}</CardTitle>
+          <Button className="btn-marvel">Detalhes</Button>
+        </CardBody>
+      </Card>
+    </div>
   )
 }
 
