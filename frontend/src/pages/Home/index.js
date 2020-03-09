@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ts, publicKey, hash, baseURL } from '../../Api'
 import axios from 'axios';
-import Personagem from '../../components/Personagem';
+import Character from '../../components/Character'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -26,8 +26,8 @@ const Home = () => {
       <div className="container">
         {loading && <span className="loading">Loading...</span>}
         {characters
-          .map((item, index) =>
-            <Personagem item={item} index={index} key={index} />
+          .map((item) =>
+            <Character item={item} key={item.id} />
           )
         }
       </div>

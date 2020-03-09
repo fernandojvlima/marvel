@@ -10,7 +10,7 @@ const Character = (props) => {
     <div>
       <Card className="card-corpo">
         <CardImg top src={item.thumbnail.path + imageExtension} alt={item.name} className="card-image" />
-        <CardBody key={index} >
+        <CardBody>
           <CardTitle>{item.name}</CardTitle>
           <Button className="btn-marvel">Detalhes</Button>
         </CardBody>
