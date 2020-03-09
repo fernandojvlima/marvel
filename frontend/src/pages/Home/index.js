@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ts, publicKey, hash, baseURL } from '../../Api';
+import { ts, publicKey, hash, baseURL } from '../../Api'
 import axios from 'axios';
-import Personagem from '../Personagem';
+import Personagem from '../../components/Personagem';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -21,12 +22,12 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="barra">Marvel</h1>
+      <Link to="/about"><h1 className="barra">Marvel</h1></Link>
       <div className="container">
         {loading && <span className="loading">Loading...</span>}
         {characters
           .map((item, index) =>
-            <Personagem item={item} index={index} />
+            <Personagem item={item} index={index} key={index} />
           )
         }
       </div>

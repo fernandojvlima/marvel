@@ -1,4 +1,3 @@
-import React from 'react';
 
 //Timestamp
 const ts = 1583521943;
