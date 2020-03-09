@@ -16,39 +16,3 @@ body {
   border: 12px;
   margin-bottom: 20px;
 }
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card-image {
-  width: 150px;
-  height: 225px;
-}
-
-.teste {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card-corpo {
-  padding: 10px;
-  background-color: #202020;
-  width: 180px;
-  height: 360px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  color: #fff;
-  text-align: center;
-}
-
-.btn-marvel {
-  background-color: #f0141e;
-  color: #fff;
-  font-weight: bold;
-}

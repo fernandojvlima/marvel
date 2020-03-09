@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { ts, publicKey, hash, baseURL } from '../../Api'
+import { ts, publicKey, hash, baseURL } from '../../services/api';
 import axios from 'axios';
-import Character from '../../components/Character'
-import { Link } from 'react-router-dom';
+import Character from '../../components/Character';
+import Header from '../../components/Header';
+import { Spinner } from 'reactstrap';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -11,20 +12,22 @@ const Home = () => {
 
   //Requisição para o servidor Marvel solicitando personagens, passando as chaves da API.
   useEffect(() => {
-    axios
-      .get(`${baseURL}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-      .then(res => {
-        setData(data)
-        setCharacters(res.data.data.results)
-        setLoading(false)
-      })
+    async function loadCharacters() {
+      const response = await axios.get(`${baseURL}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+      setData(data)
+      setCharacters(response.data.data.results)
+      setLoading(false)
+    }
+    loadCharacters()
+
   }, [])
+
 
   return (
     <div>
-      <Link to="/about"><h1 className="barra">Marvel</h1></Link>
+      <Header />
       <div className="container">
-        {loading && <span className="loading">Loading...</span>}
+        {loading && <div><span className="loading">Loading...</span> <Spinner type="grow" color="success" /></div>}
         {characters
           .map((item) =>
             <Character item={item} key={item.id} />

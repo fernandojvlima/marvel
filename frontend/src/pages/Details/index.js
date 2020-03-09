@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Details = (props) => {
-  const [character, setCharacter] = useState({});
+  //const [character, setCharacter] = useState({});
 
   return (
     <div>

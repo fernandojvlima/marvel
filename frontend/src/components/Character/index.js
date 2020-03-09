@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
-import { imageExtension } from '../../Api';
+import { imageExtension } from '../../services/api';
+import './index.css'
 
 const Character = (props) => {
   const item = props.item;
-  const index = props.index;
 
   return (
     <div>
