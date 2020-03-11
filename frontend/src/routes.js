@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound';
 import About from './pages/About';
 import Details from './pages/Details';
 
+
 const Routes = () => {
   return (
     <Router>
