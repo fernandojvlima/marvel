@@ -24,4 +24,15 @@ export const loadDataUASuccess = (data) => {
   }
 }
 
+export const loadDataCharacterRequest = () => {
+  return {
+    type: 'LOAD_DATA_CHARACTER_REQUEST',
+  }
+}
 
+export const loadDataCharacterSuccess = (data) => {
+  return {
+    type: 'LOAD_DATA_CHARACTER_SUCCESS',
+    data
+  }
+}

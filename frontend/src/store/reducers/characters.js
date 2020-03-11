@@ -1,11 +1,15 @@
+
+//Iniciando o estado do reducer.
 const INITIAL_STATE = {
   data: [],
   isFetching: false,
   error: false
 }
 
+//Montando o reducer, que sempre recebe um estado e uma action.
+//Baseado no estado e na action, ele vai retornar um novo state.
 const characters = (state = INITIAL_STATE, action) => {
-  if (action.type === 'LOAD_DATA_REQUEST') {
+  if (action.type === 'LOAD_DATA_CHARACTER_REQUEST') {
     return {
       isFetching: true,
       data: [],
@@ -13,8 +17,7 @@ const characters = (state = INITIAL_STATE, action) => {
     }
   }
 
-  if (action.type === 'LOAD_DATA_SUCCESS') {
-    console.log(action)
+  if (action.type === 'LOAD_DATA_CHARACTER_SUCCESS') {
     return {
       isFetching: false,
       data: action.data,
@@ -22,11 +25,11 @@ const characters = (state = INITIAL_STATE, action) => {
     }
   }
 
-  if (action.type === 'LOAD_DATA_FAILURE') {
+  if (action.type === 'LOAD_DATA_CHARACTER_FAILURE') {
     return {
       isFetching: true,
       data: [],
-      error: false
+      error: true
     }
   }
   return state;
