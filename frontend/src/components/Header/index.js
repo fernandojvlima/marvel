@@ -1,8 +1,11 @@
 import React from 'react';
+import './index.css'
 
 const Header = () => {
   return (
-    <h1 className="barra">Marvel</h1>
+    <div>
+      <h1 className="barra">Marvel</h1>
+    </div>
   )
 }
 export default Header;

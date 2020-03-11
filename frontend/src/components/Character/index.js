@@ -9,10 +9,10 @@ import './index.css'
 class Character extends Component {
   render() {
     return (
-      <div>
-        <h3>{this.props.data.map((item) => {
+      <div className="container">
+        {this.props.data.map((item) => {
           return (
-            <Card className="card-corpo">
+            <Card className="card-corpo" key={item.id}>
               <CardImg top src={item.thumbnail.path + imageExtension} alt={item.name} className="card-image" />
               <CardBody>
                 <CardTitle>{item.name}</CardTitle>
@@ -20,7 +20,7 @@ class Character extends Component {
               </CardBody>
             </Card>
           )
-        })}</h3>
+        })}
       </div>
     )
   }

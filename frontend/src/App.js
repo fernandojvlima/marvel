@@ -4,14 +4,12 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducers from './store/reducers/index';
 import createSagaMiddleware from 'redux-saga';
-import Character from './components/Character';
-import index from './sagas/index'
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 import { ts, publicKey, hash, baseURL } from './services/api'
 import { loadDataCharacterSuccess } from './store/actions';
 import Home from './pages/Home';
-import Header from './components/Header'
+
 
 //Instancia do SagaMiddleware pra chamar depois
 const sagaMiddleware = createSagaMiddleware();
@@ -31,13 +29,10 @@ function* getCharacters() {
 sagaMiddleware.run(getCharacters)
 
 class App extends Component {
-
   render() {
-
     return (
       <Provider store={store}>
         <div className="App">
-          <Header />
           <Home />
         </div>
       </Provider>

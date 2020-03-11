@@ -5,27 +5,23 @@
   justify-content: center;
 }
 
-.card-image {
-  width: 150px;
-  height: 225px;
-}
-
-.teste {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .card-corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   background-color: #202020;
-  width: 180px;
+  width: 200px;
   height: 360px;
   margin-bottom: 10px;
   margin-right: 10px;
   color: #fff;
   text-align: center;
+}
+
+.card-image {
+  width: 150px;
+  height: 225px;
 }
 
 .btn-marvel {

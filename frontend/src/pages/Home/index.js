@@ -1,11 +1,15 @@
 import React from 'react';
 import Character from '../../components/Character'
+import Search from '../../components/Search';
+import Header from '../../components/Header'
+import './index.css';
 
 
 const Home = () => {
-
   return (
-    <div className="container">
+    <div >
+      <Header />
+      <Search />
       <Character />
     </div>
   )
