@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   error: false
 }
 
-const ip = (state = INITIAL_STATE, action) => {
+const characters = (state = INITIAL_STATE, action) => {
   if (action.type === 'LOAD_DATA_REQUEST') {
     return {
       isFetching: true,
@@ -32,4 +32,4 @@ const ip = (state = INITIAL_STATE, action) => {
   return state;
 }
 
-export default ip;
+export default characters;

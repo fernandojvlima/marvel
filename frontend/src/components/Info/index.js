@@ -5,7 +5,12 @@ import { loadDataRequest } from '../../store/actions'
 class Info extends Component {
   render() {
     return (
-      <p>Info</p>
+      <div>
+        <p>Info{this.props.data}</p>
+        {!this.props.isFetching && <button className="btn btn-secondary" onClick={() => this.props.loadData()}>Load</button>}
+        {this.props.isFetching && <span>loading...</span>}
+
+      </div>
     )
   }
 }

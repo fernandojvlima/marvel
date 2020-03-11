@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-import reducers from './store/reducers/index'
-import Info from './components/Info'
-
+import reducers from './store/reducers/index';
+import indexSaga from './sagas/index'
 import createSagaMiddleware from 'redux-saga';
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,17 +14,14 @@ let store = createStore(
   applyMiddleware(logger, sagaMiddleware)
 )
 
-function* ola() {
-  console.log('hello from saga')
-}
-sagaMiddleware.run(ola)
+sagaMiddleware.run(indexSaga)
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-          <Info />
+          <h1>Ola</h1>
         </div>
       </Provider>
     );
