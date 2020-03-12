@@ -1,0 +1,16 @@
+.edit-title {
+  margin-bottom: 50px;
+}
+
+.edit-character {
+  margin-bottom: 50px;
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

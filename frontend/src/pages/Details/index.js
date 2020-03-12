@@ -41,11 +41,6 @@ const Details = (props) => {
                 })}
               </Jumbotron>
             </Card>
-
-
-
-
-
           </div>
         )
       })}
