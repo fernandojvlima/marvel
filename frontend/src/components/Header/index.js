@@ -1,10 +1,11 @@
 import React from 'react';
-import './index.css'
+import './index.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div>
-      <h1 className="barra">Marvel</h1>
+      <Link to="/"><h1 className="barra">Marvel</h1></Link>
     </div>
   )
 }

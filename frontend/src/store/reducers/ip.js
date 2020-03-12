@@ -24,9 +24,9 @@ const ip = (state = INITIAL_STATE, action) => {
 
   if (action.type === 'LOAD_DATA_FAILURE') {
     return {
-      isFetching: true,
+      isFetching: false,
       data: [],
-      error: false
+      error: true
     }
   }
   return state;

@@ -3,13 +3,14 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducers from './store/reducers/index';
+import index from './sagas/index'
 import createSagaMiddleware from 'redux-saga';
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 import { ts, publicKey, hash, baseURL } from './services/api'
 import { loadDataCharacterSuccess } from './store/actions';
-import Home from './pages/Home';
-
+import { loadDataCharacterFailure } from './store/actions';
+import Routes from './routes';
 
 //Instancia do SagaMiddleware pra chamar depois
 const sagaMiddleware = createSagaMiddleware();
@@ -22,18 +23,23 @@ let store = createStore(
 )
 
 function* getCharacters() {
-  const dados = yield axios.get(`${baseURL}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-  yield put(loadDataCharacterSuccess(dados.data.data.results))
+  try {
+    const dados = yield axios.get(`${baseURL}characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    yield put(loadDataCharacterSuccess(dados.data.data.results))
+  }
+  catch (error) {
+    yield put(loadDataCharacterFailure({ error: true }))
+  }
 }
 
-sagaMiddleware.run(getCharacters)
+sagaMiddleware.run(getCharacters, index)
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-          <Home />
+          <Routes />
         </div>
       </Provider>
     );

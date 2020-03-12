@@ -36,3 +36,31 @@ export const loadDataCharacterSuccess = (data) => {
     data
   }
 }
+
+export const loadDataCharacterFailure = () => {
+  return {
+    type: 'LOAD_DATA_CHARACTER_FAILURE',
+
+  }
+}
+
+
+export const loadDetailsRequest = () => {
+  return {
+    type: 'LOAD_DETAILS_REQUEST',
+  }
+}
+
+export const loadDetailsSuccess = (data) => {
+  return {
+    type: 'LOAD_DETAILS_SUCCESS',
+    data
+  }
+}
+
+export const loadDetailsFailure = () => {
+  return {
+    type: 'LOAD_DETAILS_FAILURE',
+
+  }
+}
