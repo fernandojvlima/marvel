@@ -1,9 +1,16 @@
 import React from 'react';
+import imgErro from '../../assets/imgErro.png'
+import Header from '../../components/Header';
+import './index.css'
 
 const NotFound = () => {
+
   return (
     <div>
-      <h1>Ops! Não encontrado</h1>
+      <Header />
+      <div className="erro404">
+        <img src={imgErro} alt="Página não encontrada" />
+      </div>
     </div>
   )
 }

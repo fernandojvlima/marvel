@@ -3,9 +3,10 @@ import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import './index.css'
 import {
-  Card, CardImg, CardBody, CardTitle, Jumbotron
+  Card, CardImg, CardBody, CardTitle, Jumbotron, Button
 } from 'reactstrap';
-import { imageExtension } from '../../services/api'
+import { imageExtension } from '../../services/api';
+import { Link } from 'react-router-dom';
 
 const Details = (props) => {
   const parametrosDaUrl = window.location.href;
@@ -22,6 +23,7 @@ const Details = (props) => {
             <Card className="card-corpo-details" key={item.id}>
               <CardImg top src={item.thumbnail.path + imageExtension} alt={item.name} className="card-image" />
               <CardBody>
+                <Link to={'/edit/' + item.id}><Button color="warning" className="button-edit">Editar</Button>{' '}</Link>
                 <CardTitle>{item.name}</CardTitle>
                 <p className="card-text">Última Atualização: {item.modified}</p>
                 <p className="card-text">Descrição: {item.description === '' ? 'Personagem não possui descrição' : item.description}</p>
