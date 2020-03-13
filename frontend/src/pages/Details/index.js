@@ -13,7 +13,6 @@ const Details = (props) => {
   const res = parametrosDaUrl.split('/')
   const id = Number(res[4])
   const characterPicked = props.data.filter(item => item.id === id)
-  console.log(characterPicked)
   return (
     <div>
       <Header />

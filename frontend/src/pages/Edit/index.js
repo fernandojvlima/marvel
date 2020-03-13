@@ -2,53 +2,60 @@ import React from 'react';
 import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import './index.css';
+import { editCharacter } from '../../store/actions';
 
 const Edit = (props) => {
   const parametrosDaUrl = window.location.href;
   const res = parametrosDaUrl.split('/')
   const id = Number(res[4])
   const characterPicked = props.data.filter(item => item.id === id)
-  console.log(characterPicked)
 
-  const handleInputName = (event) => {
+  const handleInputName = event => {
     const name = event.target.value;
     console.log(name)
   }
 
-  const handleInputDescription = (event) => {
+  const handleInputDescription = event => {
     const description = event.target.value;
     console.log(description)
   }
+
+  const Input = (props) => {
+    return (<div>
+      {props.label && <label>{props.label}</label>}
+      <input value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type || "text"} />
+    </div>)
+  }
+
+  const handleSubmit = (name, description, event) => {
+    alert('fui enviado')
+    event.preventDefault();
+  }
+
   return (
     <div>
       <Header />
-
       <div className="container">
         <div>
-          <h3 className="edit-title">Editar o Personagem {}</h3>
+          <h4 className="edit-title">Editar o Personagem</h4>
         </div>
+        {characterPicked.map((item) => {
+          return (
+            <div key={item.name}>
+              <form onSubmit={handleSubmit}>
+                <div className="input-nome">
+                  <label htmlFor="inputName">Nome</label>
+                  <input type="text" className="form-control" id="inputName" placeholder={item.name} onChange={handleInputName} />
+                </div>
+                <div className="input-description">
+                  <label htmlFor="inputDescription">Descrição</label>
+                  <input type="text" className="form-control" id="inputDescription" placeholder={item.description === '' ? 'Sem descrição disponível' : item.description} onChange={handleInputDescription} />
+                </div>
+                <button type="submit" id="btn-save" className="btn btn-primary">Save</button>
+              </form>
+            </div>)
+        })}
       </div>
-
-      {characterPicked.map((item) => {
-        return (
-          <div key={item.name}>
-            <form>
-              <div className="form-group col-md-6">
-                <label htmlFor="inputCity">Nome</label>
-                <input type="text" className="form-control" id="inputCity" placeholder={item.name} onChange={handleInputName} />
-              </div>
-
-              <div className="form-group col-md-2">
-                <label htmlFor="inputZip">Descrição</label>
-                <input type="text" className="form-control" id="inputZip" placeholder={item.description} onChange={handleInputDescription} />
-              </div>
-
-              <button type="submit" className="btn btn-primary">Save</button>
-            </form>
-          </div>)
-      })}
-
-
     </div>)
 }
 
@@ -62,6 +69,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Edit);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadData: () => dispatch(editCharacter())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);
 
 

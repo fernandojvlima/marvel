@@ -1,35 +1,11 @@
-export const loadDataRequest = () => {
-  return {
-    type: 'LOAD_DATA_REQUEST'
-  }
-}
-
-export const loadDataSuccess = (data) => {
-  return {
-    type: 'LOAD_DATA_SUCCESS',
-    data
-  }
-}
-
-export const loadDataUARequest = () => {
-  return {
-    type: 'LOAD_DATA_UA_REQUEST'
-  }
-}
-
-export const loadDataUASuccess = (data) => {
-  return {
-    type: 'LOAD_DATA_UA_SUCCESS',
-    data
-  }
-}
-
+//Action da Home para Carregar Personagens
 export const loadDataCharacterRequest = () => {
   return {
     type: 'LOAD_DATA_CHARACTER_REQUEST',
   }
 }
 
+//Se o retorno for 200
 export const loadDataCharacterSuccess = (data) => {
   return {
     type: 'LOAD_DATA_CHARACTER_SUCCESS',
@@ -37,6 +13,7 @@ export const loadDataCharacterSuccess = (data) => {
   }
 }
 
+//Se deu algo errado na requisição
 export const loadDataCharacterFailure = () => {
   return {
     type: 'LOAD_DATA_CHARACTER_FAILURE',
@@ -44,13 +21,14 @@ export const loadDataCharacterFailure = () => {
   }
 }
 
-
+//Action da Home para Carregar Personagens
 export const loadDetailsRequest = () => {
   return {
     type: 'LOAD_DETAILS_REQUEST',
   }
 }
 
+//Se o retorno for 200
 export const loadDetailsSuccess = (data) => {
   return {
     type: 'LOAD_DETAILS_SUCCESS',
@@ -58,9 +36,16 @@ export const loadDetailsSuccess = (data) => {
   }
 }
 
+//Se deu algo errado na requisição
 export const loadDetailsFailure = () => {
   return {
     type: 'LOAD_DETAILS_FAILURE',
+  }
+}
 
+//Action para alterar o personagem, apenas localmente.
+export const editCharacter = () => {
+  return {
+    type: 'EDIT_CHARACTER',
   }
 }

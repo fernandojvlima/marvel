@@ -1,16 +1,21 @@
-.edit-title {
-  margin-bottom: 50px;
-}
-
-.edit-character {
-  margin-bottom: 50px;
-}
-
-.form-edit {
+.container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.edit-title {
+  margin-bottom: 50px;
+}
+
+.input-nome {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.input-description {
+  margin-bottom: 50px;
   width: 100%;
 }
