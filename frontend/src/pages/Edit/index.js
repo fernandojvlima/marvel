@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import './index.css';
 import { editCharacter } from '../../store/actions';
+import Input from '../../components/Input';
 
 const Edit = (props) => {
   const parametrosDaUrl = window.location.href;
@@ -20,12 +21,6 @@ const Edit = (props) => {
     console.log(description)
   }
 
-  // const Input = (props) => {
-  //   return (<div>
-  //     {props.label && <label>{props.label}</label>}
-  //     <input value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type || "text"} />
-  //   </div>)
-  // }
 
   const handleSubmit = (name, description, event) => {
     alert('fui enviado')
@@ -35,7 +30,7 @@ const Edit = (props) => {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className="edit-div">
         <div>
           <h4 className="edit-title">Editar o Personagem</h4>
         </div>
@@ -45,11 +40,11 @@ const Edit = (props) => {
               <form onSubmit={handleSubmit}>
                 <div className="input-nome">
                   <label htmlFor="inputName">Nome</label>
-                  <input type="text" className="form-control" id="inputName" placeholder={item.name} onChange={handleInputName} />
+                  <Input type="text" placeholder={item.name} onChange={handleInputName} />
                 </div>
                 <div className="input-description">
                   <label htmlFor="inputDescription">Descrição</label>
-                  <input type="text" className="form-control" id="inputDescription" placeholder={item.description === '' ? 'Sem descrição disponível' : item.description} onChange={handleInputDescription} />
+                  <Input type="text" placeholder={item.description === '' ? 'Sem descrição disponível' : item.description} onChange={handleInputDescription} />
                 </div>
                 <button type="submit" id="btn-save" className="btn btn-primary">Save</button>
               </form>

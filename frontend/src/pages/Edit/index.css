@@ -12,10 +12,10 @@
 
 .input-nome {
   margin-bottom: 30px;
-  width: 100%;
+  min-width: 600px;
 }
 
 .input-description {
   margin-bottom: 50px;
-  width: 100%;
+  min-width: 600px;
 }
