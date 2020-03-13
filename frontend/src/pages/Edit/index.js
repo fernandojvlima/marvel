@@ -11,19 +11,18 @@ const Edit = (props) => {
   const id = Number(res[4])
   const characterPicked = props.data.filter(item => item.id === id)
 
-  const handleInputName = event => {
+  const handleInputName = (event) => {
     const name = event.target.value;
     console.log(name)
   }
 
-  const handleInputDescription = event => {
+  const handleInputDescription = (event) => {
     const description = event.target.value;
     console.log(description)
   }
 
-
-  const handleSubmit = (name, description, event) => {
-    alert('fui enviado')
+  const handleSubmit = (event) => {
+    alert('Fui Enviado')
     event.preventDefault();
   }
 

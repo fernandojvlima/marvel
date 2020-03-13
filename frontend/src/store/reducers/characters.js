@@ -2,7 +2,6 @@
 //Iniciando o estado do reducer.
 const INITIAL_STATE = {
   data: [],
-  id: '',
   isFetching: false,
   error: false
 }

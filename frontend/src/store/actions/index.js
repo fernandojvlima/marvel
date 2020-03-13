@@ -49,3 +49,14 @@ export const editCharacter = () => {
     type: 'EDIT_CHARACTER',
   }
 }
+
+//Action para filtrar personagens
+export const filterCharacter = (data, name) => (dispatch) => {
+  return {
+    type: 'FILTER_CHARACTER',
+    name: {
+      name: name,
+      character: name === '' ? data : data.filter(a => data.name.indexOf(name))
+    }
+  }
+}

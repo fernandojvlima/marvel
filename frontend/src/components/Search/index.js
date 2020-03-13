@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input } from 'reactstrap';
-import './index.css'
+import './index.css';
+import { connect } from 'react-redux';
 
 class Search extends Component {
   render() {
@@ -16,4 +17,12 @@ class Search extends Component {
   }
 }
 
-export default Search;
+
+const mapStateToProps = (state) => {
+  return {
+
+    data: state.characters.data,
+
+  }
+}
+export default connect(mapStateToProps)(Search);
