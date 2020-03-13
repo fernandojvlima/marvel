@@ -20,9 +20,7 @@ class Search extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
     data: state.characters.data,
-
   }
 }
 export default connect(mapStateToProps)(Search);
