@@ -20,12 +20,12 @@ const Edit = (props) => {
     console.log(description)
   }
 
-  const Input = (props) => {
-    return (<div>
-      {props.label && <label>{props.label}</label>}
-      <input value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type || "text"} />
-    </div>)
-  }
+  // const Input = (props) => {
+  //   return (<div>
+  //     {props.label && <label>{props.label}</label>}
+  //     <input value={props.value} onChange={props.onChange} placeholder={props.placeholder} type={props.type || "text"} />
+  //   </div>)
+  // }
 
   const handleSubmit = (name, description, event) => {
     alert('fui enviado')
