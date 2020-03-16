@@ -51,11 +51,12 @@ export const editCharacter = () => {
 }
 
 //Action para filtrar personagens
-export const filterCharacter = (data, name) => {
+export const filterCharacter = (data, name) => (dispatch) => {
   return {
     type: 'FILTER_CHARACTER',
-    payload: {
-      data: name === '' ? data : data.filter(c => data.name.indexOf(name) >= 0)
+    name: {
+      name: name,
+      character: name === '' ? data : data.filter(a => data.name.indexOf(name))
     }
   }
 }
