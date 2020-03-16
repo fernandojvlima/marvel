@@ -56,7 +56,7 @@ export const filterCharacter = (data, name) => {
     type: 'FILTER_CHARACTER',
     data: data,
     name: name,
-    filteredItems: name === '' ? data : data.filter(a => a.indexOf(name) >= -1)
+    filteredItems: name === '' ? data : data.filter(item => item.name === name)
 
   }
 }
