@@ -1,6 +1,6 @@
 import React from 'react';
 import Character from '../../components/Character'
-import Search from '../../components/Search';
+import Filter from '../../components/Filter';
 import Header from '../../components/Header';
 import './index.css';
 
@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
     <div >
       <Header />
-      <Search />
+      <Filter />
       <Character />
     </div>
   )
