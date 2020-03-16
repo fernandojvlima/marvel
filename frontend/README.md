@@ -29,11 +29,9 @@ Dependências utilizadas no projeto além das convencionais:
 -> Redux-Saga: Utilizada para consumir API.
 
 Layout:
-
 -> Foi utilizado bootstrap e css puro para estilizações mais personalizadas.
 
 Pendências:
-
 -> Ainda falta implementar a barra de pesquisa
 -> Testes
 -> Salvar local a edição de personagem
