@@ -7,7 +7,7 @@ as especificações abaixo:
 Funcionalidades esperadas:
 
 - Crie uma lista de cards para exibir os personagens mostrando a imagem e o nome; OK
-- Possibilite o usuário buscar personagens; Em andamento
+- Possibilite o usuário buscar personagens; Ok
 - Na lista o usuário pode ir para a página de detalhes do personagem e ver a lista de series dele; Ok
 - Crie um formulário para editar um personagem Marvel (salvando apenas no client-side); Em andamento
   Restrições técnicas:
@@ -33,8 +33,6 @@ Layout:
 -> Foi utilizado bootstrap e css puro para estilizações mais personalizadas.
 
 Pendências:
-
--> Ainda falta implementar a barra de pesquisa
 -> Testes
 -> Salvar local a edição de personagem
 

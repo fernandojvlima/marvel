@@ -11,18 +11,20 @@ const Edit = (props) => {
   const id = Number(res[4])
   const characterPicked = props.data.filter(item => item.id === id)
 
-  const handleInputName = (event) => {
-    const name = event.target.value;
+  const handleInputName = e => {
+    const name = e.target.value;
     console.log(name)
   }
 
-  const handleInputDescription = (event) => {
-    const description = event.target.value;
+  const handleInputDescription = e => {
+    const description = e.target.value;
     console.log(description)
   }
 
-  const handleSubmit = (event) => {
-    alert('Fui Enviado')
+
+
+  const handleSubmit = (event, name, description) => {
+    console.log(name, description)
     event.preventDefault();
   }
 
@@ -31,7 +33,7 @@ const Edit = (props) => {
       <Header />
       <div className="edit-div">
         <div>
-          <h4 className="edit-title">Editar o Personagem</h4>
+          <h4 className="edit-title">Editar o Personagem </h4>
         </div>
         {characterPicked.map((item) => {
           return (
