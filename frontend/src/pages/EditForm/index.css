@@ -1,9 +1,19 @@
-.container {
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 60%;
+}
+.formFields {
+  margin-bottom: 30px;
 }
 
 .edit-title {
