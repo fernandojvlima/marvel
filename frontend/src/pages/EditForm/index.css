@@ -1,4 +1,4 @@
-.edit-div {
+.container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -16,6 +16,10 @@
 }
 
 .input-description {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   min-width: 600px;
+}
+
+.previousName {
+  color: #fff;
 }

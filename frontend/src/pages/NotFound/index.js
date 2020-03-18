@@ -1,7 +1,7 @@
 import React from 'react';
 import imgErro from '../../assets/imgErro.png'
 import Header from '../../components/Header';
-import './index.css'
+import './index.css';
 
 const NotFound = () => {
 

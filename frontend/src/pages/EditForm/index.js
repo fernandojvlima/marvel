@@ -3,48 +3,35 @@ import Header from '../../components/Header';
 import { connect } from 'react-redux';
 import './index.css';
 import { editCharacter } from '../../store/actions';
-import Input from '../../components/Input';
+import { Field, reduxForm } from 'redux-form';
 
-const Edit = (props) => {
+let EditForm = props => {
+  const { handleSubmit } = props;
   const parametrosDaUrl = window.location.href;
   const res = parametrosDaUrl.split('/')
   const id = Number(res[4])
   const characterPicked = props.data.filter(item => item.id === id)
 
-  const handleInputName = e => {
-    const name = e.target.value;
-    console.log(name)
-  }
-
-  const handleInputDescription = e => {
-    const description = e.target.value;
-    console.log(description)
-  }
-
-
-  const handleSubmit = (event, name, description) => {
-    alert(name, description)
-    event.preventDefault();
-  }
-
   return (
     <div>
       <Header />
-      <div className="edit-div">
+      <div className="container">
         <div>
           <h4 className="edit-title">Editar o Personagem </h4>
         </div>
         {characterPicked.map((item) => {
           return (
             <div key={item.name}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={props.handleSubmit}>
                 <div className="input-nome">
-                  <label htmlFor="inputName">Nome</label>
-                  <Input type="text" placeholder={item.name} onChange={handleInputName} />
+                  <label htmlFor="inputName">Novo Nome: </label>
+                  <Field className="form-control" name="name" type="text" component="input" />
+                  <label htmlFor="inputName" className="previousName">Nome Anterior: {item.name}</label>
                 </div>
                 <div className="input-description">
-                  <label htmlFor="inputDescription">Descrição</label>
-                  <Input type="text" placeholder={item.description === '' ? 'Sem descrição disponível' : item.description} onChange={handleInputDescription} />
+                  <label htmlFor="inputDescription">Nova Descrição:</label>
+                  <Field className="form-control" name="description" type="text" component="input" />
+                  <label htmlFor="inputDescription" className="previousName" >Descrição Anterior: {item.description === '' ? 'Sem descrição disponível' : item.description}</label>
                 </div>
                 <button type="submit" id="btn-save" className="btn btn-primary">Save</button>
               </form>
@@ -54,7 +41,10 @@ const Edit = (props) => {
     </div>)
 }
 
-
+EditForm = reduxForm({
+  // a unique name for the form
+  form: 'EditForm'
+})(EditForm)
 
 const mapStateToProps = (state) => {
   return {
@@ -68,6 +58,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Edit);
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);
 
 
