@@ -21,7 +21,7 @@ const Character = (props) => {
         )
       })}
 
-      {props.filteredItems.length === 0 && <Spinner animation="grow" variant="dark" />}
+      {props.filteredItems.length === 0 && props.name !== '' && <Spinner animation="grow" variant="dark" />}
 
       {props.filteredItems.map((item) => {
         return (

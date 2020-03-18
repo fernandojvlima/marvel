@@ -43,13 +43,6 @@ export const loadDetailsFailure = () => {
   }
 }
 
-//Action para alterar o personagem, apenas localmente.
-export const editCharacter = () => {
-  return {
-    type: 'EDIT_CHARACTER',
-  }
-}
-
 //Action para filtrar personagens
 export const filterCharacter = (data, name) => {
   return {
@@ -58,5 +51,14 @@ export const filterCharacter = (data, name) => {
     name: name,
     filteredItems: name === '' ? data : data.filter(item => item.name === name)
 
+  }
+}
+
+//Action para alterar o personagem, apenas localmente.
+export const editCharacter = (data, id, description, name) => {
+  return {
+    type: 'EDIT_CHARACTER',
+    name: data.filter(item => item.id === id) ? name : data.name,
+    description: data.filter(item => item.id === id) ? description : data.description
   }
 }

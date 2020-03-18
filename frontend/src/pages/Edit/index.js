@@ -22,9 +22,8 @@ const Edit = (props) => {
   }
 
 
-
   const handleSubmit = (event, name, description) => {
-    console.log(name, description)
+    alert(name, description)
     event.preventDefault();
   }
 
@@ -59,9 +58,7 @@ const Edit = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.characters.isFetching,
     data: state.characters.data,
-    error: state.characters.error
   }
 }
 

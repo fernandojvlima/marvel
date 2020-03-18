@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { filterCharacter } from '../../store/actions/index';
 
 const Filter = (props) => {
-  const data = props.data;
-  console.log(data)
+
+
   return (
     <div className="barra-pesquisa">
       <Form>

@@ -1,36 +1,19 @@
 
 //Iniciando o estado do reducer.
 const INITIAL_STATE = {
-  data: [],
-  id: '',
-  isFetching: false,
-  error: false
+  name: '',
+  description: ''
 }
 
 //Montando o reducer, que sempre recebe um estado e uma action.
 //Baseado no estado e na action, ele vai retornar um novo state.
 const editCharacter = (state = INITIAL_STATE, action) => {
-  if (action.type === 'EDIT_CHARACTER_REQUEST') {
-    return {
-      isFetching: true,
-      data: [],
-      error: false
-    }
-  }
 
-  if (action.type === 'EDIT_CHARACTER_SUCCESS') {
+  if (action.type === 'EDIT_CHARACTER') {
     return {
-      isFetching: false,
-      data: action.data,
-      error: false
-    }
-  }
-
-  if (action.type === 'EDIT_CHARACTER_FAILURE') {
-    return {
-      isFetching: false,
-      data: [],
-      error: true
+      ...state,
+      name: action.name,
+      description: action.description
     }
   }
   return state;
