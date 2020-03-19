@@ -7,14 +7,14 @@
 Crie um projeto utilizando React e a API da Marvel (https://developer.marvel.com/docs#) seguindo as especificações abaixo: Funcionalidades esperadas:
 
 ###Tarefas
-Crie uma lista de cards para exibir os personagens mostrando a imagem e o nome; OK
-Possibilite o usuário buscar personagens; Ok
-Na lista o usuário pode ir para a página de detalhes do personagem e ver a lista de series dele; Ok
+Crie uma lista de cards para exibir os personagens mostrando a imagem e o nome; 
+Possibilite o usuário buscar personagens; 
+Na lista o usuário pode ir para a página de detalhes do personagem e ver a lista de series dele; 
 Crie um formulário para editar um personagem Marvel (salvando apenas no client-side); Em andamento Restrições técnicas:
-Utilize o create-react-app como base; Ok
-Utilize redux para gerenciar o estado; Ok
-Utilize react-router para trocar de página; Ok
-Utilize @testing-library/react para testes; Pendente
+Utilize o create-react-app como base; 
+Utilize redux para gerenciar o estado; 
+Utilize react-router para trocar de página; 
+Utilize @testing-library/react para testes; 
 
 ####Sobre o Projeto;
 Foi feito utilizando componentes funcionais.
