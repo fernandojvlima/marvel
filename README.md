@@ -5,7 +5,7 @@ Objetivo Final:
 Crie um projeto utilizando React e a API da Marvel (https://developer.marvel.com/docs#) seguindo as especificações abaixo: Funcionalidades esperadas:
 
 Crie uma lista de cards para exibir os personagens mostrando a imagem e o nome; OK
-Possibilite o usuário buscar personagens; Em andamento
+Possibilite o usuário buscar personagens; Ok
 Na lista o usuário pode ir para a página de detalhes do personagem e ver a lista de series dele; Ok
 Crie um formulário para editar um personagem Marvel (salvando apenas no client-side); Em andamento Restrições técnicas:
 Utilize o create-react-app como base; Ok
@@ -19,6 +19,7 @@ Arquitetura em Redux
 Estrutura de Pastas com Pages e Components
 Roteamento com Router-Dom
 Dependências utilizadas no projeto além das convencionais: -> Logger: Ferramenta para o desenvolvedor debbugar as actions e states -> Reactstrap: Aproveitamento de alguns componentes padrão já carregados para React -> Redux-Saga: Utilizada para consumir API.
+Redux-Form para formulários.
 
 Layout:
 
@@ -26,7 +27,7 @@ Layout:
 
 Pendências:
 
--> Ainda falta implementar a barra de pesquisa -> Testes -> Salvar local a edição de personagem
+-> Testes
 
 This project was bootstrapped with Create React App.
 
