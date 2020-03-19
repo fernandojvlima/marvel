@@ -1,4 +1,3 @@
-
 //Iniciando o estado do reducer.
 const INITIAL_STATE = {
   data: [],
@@ -10,33 +9,35 @@ const INITIAL_STATE = {
 //Montando o reducer, que sempre recebe um estado e uma action.
 //Baseado no estado e na action, ele vai retornar um novo state.
 const details = (state = INITIAL_STATE, action) => {
-  if (action.type === 'LOAD_DETAILS_REQUEST') {
-    return {
-      isFetching: true,
-      data: [],
-      id: '',
-      error: false
+  switch (action.type) {
+    case 'LOAD_DETAILS_REQUEST': {
+      return {
+        isFetching: true,
+        data: [],
+        id: '',
+        error: false
+      }
+    }
+    case 'LOAD_DETAILS_SUCCESS': {
+      return {
+        isFetching: false,
+        data: action.data,
+        id: action.data.id,
+        error: false
+      }
+    }
+    case 'LOAD_DETAILS_FAILURE': {
+      return {
+        isFetching: false,
+        data: [],
+        id: '',
+        error: true
+      }
+    }
+    default: {
+      return state;
     }
   }
-
-  if (action.type === 'LOAD_DETAILS_SUCCESS') {
-    return {
-      isFetching: false,
-      data: action.data,
-      id: action.data.id,
-      error: false
-    }
-  }
-
-  if (action.type === 'LOAD_DETAILS_FAILURE') {
-    return {
-      isFetching: false,
-      data: [],
-      id: '',
-      error: true
-    }
-  }
-  return state;
 }
 
 export default details;

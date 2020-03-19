@@ -4,7 +4,6 @@ import Header from '../../components/Header';
 import './index.css';
 
 const NotFound = () => {
-
   return (
     <div>
       <Header />

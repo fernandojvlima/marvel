@@ -9,30 +9,34 @@ const INITIAL_STATE = {
 //Montando o reducer, que sempre recebe um estado e uma action.
 //Baseado no estado e na action, ele vai retornar um novo state.
 const characters = (state = INITIAL_STATE, action) => {
-  if (action.type === 'LOAD_DATA_CHARACTER_REQUEST') {
-    return {
-      isFetching: true,
-      data: [],
-      error: false
+  switch (action.type) {
+    case 'LOAD_DATA_CHARACTER_REQUEST': {
+      return {
+        isFetching: true,
+        data: [],
+        error: false
+      }
     }
-  }
 
-  if (action.type === 'LOAD_DATA_CHARACTER_SUCCESS') {
-    return {
-      isFetching: false,
-      data: action.data,
-      error: false
+    case 'LOAD_DATA_CHARACTER_SUCCESS': {
+      return {
+        isFetching: false,
+        data: action.data,
+        error: false
+      }
     }
-  }
 
-  if (action.type === 'LOAD_DATA_CHARACTER_FAILURE') {
-    return {
-      isFetching: false,
-      data: [],
-      error: true
+    case 'LOAD_DATA_CHARACTER_FAILURE': {
+      return {
+        isFetching: false,
+        data: [],
+        error: true
+      }
     }
+
+    default:
+      return state;
   }
-  return state;
 }
 
 export default characters;

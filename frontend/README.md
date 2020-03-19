@@ -34,7 +34,6 @@ Layout:
 
 Pendências:
 -> Testes
--> Salvar local a edição de personagem
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
