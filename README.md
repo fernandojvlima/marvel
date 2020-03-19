@@ -1,9 +1,12 @@
 #Projeto Marvel
 
-Objetivo Final:
+![Projeto Marvel](https://github.com/fernandojvlima/marvel/blob/master/2Kapture%202020-03-19%20at%2011.32.29.gif)
+
+##Objetivo Final:
 
 Crie um projeto utilizando React e a API da Marvel (https://developer.marvel.com/docs#) seguindo as especificações abaixo: Funcionalidades esperadas:
 
+###Tarefas
 Crie uma lista de cards para exibir os personagens mostrando a imagem e o nome; OK
 Possibilite o usuário buscar personagens; Ok
 Na lista o usuário pode ir para a página de detalhes do personagem e ver a lista de series dele; Ok
@@ -12,25 +15,23 @@ Utilize o create-react-app como base; Ok
 Utilize redux para gerenciar o estado; Ok
 Utilize react-router para trocar de página; Ok
 Utilize @testing-library/react para testes; Pendente
-Sobre o Projeto;
 
-Foi feito utlizando componentes funcionais.
+####Sobre o Projeto;
+Foi feito utilizando componentes funcionais.
 Arquitetura em Redux
 Estrutura de Pastas com Pages e Components
 Roteamento com Router-Dom
 Dependências utilizadas no projeto além das convencionais: -> Logger: Ferramenta para o desenvolvedor debbugar as actions e states -> Reactstrap: Aproveitamento de alguns componentes padrão já carregados para React -> Redux-Saga: Utilizada para consumir API.
 Redux-Form para formulários.
 
-Layout:
-
+#####Layout:
 -> Foi utilizado bootstrap e css puro para estilizações mais personalizadas.
 
-Pendências:
-
+######Pendências:
 -> Testes
 
-This project was bootstrapped with Create React App.
 
+This project was bootstrapped with Create React App.
 Available Scripts
 In the project directory, you can run:
 
