@@ -52,7 +52,7 @@ let EditForm = (props) => {
 
 EditForm = reduxForm({
   // a unique name for the form
-  form: 'demo'
+  form: 'editCharacter'
 })(EditForm)
 
 const mapStateToProps = (state) => {
