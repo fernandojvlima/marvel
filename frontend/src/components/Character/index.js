@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom';
 
 const Character = (props) => {
   return (
-    <div className="container">
+    <div className="container" >
       {props.name === '' && props.data.map((item) => {
         return (
-          <Card className="card-corpo" key={item.id}>
+          <Card className="card-corpo" key={item.id} data-testid="character-container">
             <CardImg top src={item.thumbnail.path + imageExtension} alt={item.name} className="card-image" />
             <CardBody>
               <CardTitle>{item.name}</CardTitle>
