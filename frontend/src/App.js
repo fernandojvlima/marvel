@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
@@ -34,16 +34,14 @@ function* getCharacters() {
 
 sagaMiddleware.run(getCharacters, index)
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <Routes />
-        </div>
-      </Provider>
-    );
-  }
+const App = () => {
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <Routes />
+      </div>
+    </Provider>
+  );
 }
 
 export default App;
